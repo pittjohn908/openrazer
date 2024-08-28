@@ -230,3 +230,22 @@ class RazerLaptopStandChromaV2(_RazerDeviceBrightnessSuspend):
                'set_custom_effect', 'set_key_row']
 
     DEVICE_IMAGE = "https://assets2.razerzone.com/images/pnx.assets/272c328913c00c6f584fe3dead2ca2a6/razer-laptop-stand-chroma-v2-hero-mobile-v2.jpg"
+
+class RazerLeviathanV2X(_RazerDeviceBrightnessSuspend):
+    """
+    Class for the Razer Leviathan V2 X
+    """
+    EVENT_FILE_REGEX = re.compile(r'.*RAZER_Razer_Leviathan_V2_X-event-if01')
+
+    USB_VID = 0x1532
+    USB_PID = 0x054A
+    HAS_MATRIX = True
+
+    # How do I clarify the WAVE_DIRS, MATRIX_DIMS, and METHODS specific to leviathan
+    WAVE_DIRS = (1, 2)
+    MATRIX_DIMS = [1, 15]
+    METHODS = ['get_device_type_accessory', 'set_static_effect', 'set_wave_effect', 'set_spectrum_effect',
+               'set_none_effect', 'set_breath_random_effect', 'set_breath_single_effect', 'set_breath_dual_effect',
+               'set_custom_effect', 'set_key_row']
+
+    DEVICE_IMAGE = "https://assets2.razerzone.com/images/pnx.assets/85d98a1ae29a2ed4c28b562a8b79370f/razer-leviathan-v2-x-chroma-desktop.jpg"
