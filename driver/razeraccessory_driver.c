@@ -270,7 +270,6 @@ static ssize_t razer_attr_write_matrix_effect_spectrum(struct device *dev, struc
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
     case USB_DEVICE_ID_RAZER_MOUSE_DOCK:
     case USB_DEVICE_ID_RAZER_CHROMA_ADDRESSABLE_RGB_CONTROLLER:
-    // TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         request = razer_chroma_extended_matrix_effect_spectrum(VARSTORE, ZERO_LED);
         request.transaction_id.id = 0x3F;
@@ -418,7 +417,6 @@ static ssize_t razer_attr_write_matrix_effect_none(struct device *dev, struct de
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
     case USB_DEVICE_ID_RAZER_MOUSE_DOCK:
     case USB_DEVICE_ID_RAZER_CHROMA_ADDRESSABLE_RGB_CONTROLLER:
-    //  TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         request = razer_chroma_extended_matrix_effect_none(VARSTORE, ZERO_LED);
         request.transaction_id.id = 0x3F;
@@ -513,7 +511,6 @@ static ssize_t razer_attr_write_matrix_effect_custom(struct device *dev, struct 
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
     case USB_DEVICE_ID_RAZER_MOUSE_DOCK:
     case USB_DEVICE_ID_RAZER_CHROMA_ADDRESSABLE_RGB_CONTROLLER:
-    // TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         request = razer_chroma_extended_matrix_effect_custom_frame();
         request.transaction_id.id = 0x3F;
@@ -576,7 +573,6 @@ static ssize_t razer_attr_write_matrix_effect_static(struct device *dev, struct 
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
     case USB_DEVICE_ID_RAZER_MOUSE_DOCK:
     case USB_DEVICE_ID_RAZER_CHROMA_ADDRESSABLE_RGB_CONTROLLER:
-    // TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         request = razer_chroma_extended_matrix_effect_static(VARSTORE, ZERO_LED, (struct razer_rgb*) & buf[0]);
         request.transaction_id.id = 0x3F;
@@ -663,7 +659,6 @@ static ssize_t razer_attr_write_matrix_effect_wave(struct device *dev, struct de
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
     case USB_DEVICE_ID_RAZER_MOUSE_DOCK:
     case USB_DEVICE_ID_RAZER_CHROMA_ADDRESSABLE_RGB_CONTROLLER:
-    // TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         request = razer_chroma_extended_matrix_effect_wave(VARSTORE, ZERO_LED, direction);
         request.transaction_id.id = 0x3F;
@@ -723,7 +718,6 @@ static ssize_t razer_attr_write_matrix_effect_breath(struct device *dev, struct 
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
     case USB_DEVICE_ID_RAZER_MOUSE_DOCK:
     case USB_DEVICE_ID_RAZER_CHROMA_ADDRESSABLE_RGB_CONTROLLER:
-    // TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         switch(count) {
         case 3: // Single colour mode
@@ -925,7 +919,6 @@ static ssize_t razer_attr_write_matrix_custom_frame(struct device *dev, struct d
         case USB_DEVICE_ID_RAZER_NOMMO_PRO:
         case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
         case USB_DEVICE_ID_RAZER_MOUSE_DOCK:
-        // TODO: Double check
         case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
             request = razer_chroma_extended_matrix_set_custom_frame(row_id, start_col, stop_col, (unsigned char*)&buf[offset]);
             request.transaction_id.id = 0x3F;
@@ -999,7 +992,6 @@ static ssize_t razer_attr_read_device_serial(struct device *dev, struct device_a
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
     case USB_DEVICE_ID_RAZER_MOUSE_DOCK:
     case USB_DEVICE_ID_RAZER_CHROMA_ADDRESSABLE_RGB_CONTROLLER:
-    // TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         request.transaction_id.id = 0xFF;
         razer_send_payload(device, &request, &response);
@@ -1210,7 +1202,6 @@ static ssize_t razer_attr_write_matrix_brightness(struct device *dev, struct dev
     case USB_DEVICE_ID_RAZER_CHROMA_BASE:
     case USB_DEVICE_ID_RAZER_NOMMO_PRO:
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
-    // TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         request = razer_chroma_extended_matrix_brightness(VARSTORE, ZERO_LED, brightness);
         request.transaction_id.id = 0x3F;
@@ -2136,7 +2127,6 @@ static int razer_accessory_probe(struct hid_device *hdev, const struct hid_devic
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
     case USB_DEVICE_ID_RAZER_CORE_X_CHROMA:
     case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA:
-    // TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         expected_protocol = USB_INTERFACE_PROTOCOL_KEYBOARD;
         break;
@@ -2216,7 +2206,6 @@ static int razer_accessory_probe(struct hid_device *hdev, const struct hid_devic
         case USB_DEVICE_ID_RAZER_RAPTOR_27:
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA:
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA_V2:
-        // TODO: Double check
         case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_matrix_effect_spectrum);            // Spectrum effect
             break;
@@ -2241,7 +2230,6 @@ static int razer_accessory_probe(struct hid_device *hdev, const struct hid_devic
         case USB_DEVICE_ID_RAZER_RAPTOR_27:
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA:
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA_V2:
-        // TODO: Double check
         case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_matrix_effect_wave);                // Wave effect
             break;
@@ -2370,7 +2358,6 @@ static void razer_accessory_disconnect(struct hid_device *hdev)
     case USB_DEVICE_ID_RAZER_NOMMO_CHROMA:
     case USB_DEVICE_ID_RAZER_CORE_X_CHROMA:
     case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA:
-    // TODO: Double check
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         expected_protocol = USB_INTERFACE_PROTOCOL_KEYBOARD;
         break;
@@ -2437,7 +2424,6 @@ static void razer_accessory_disconnect(struct hid_device *hdev)
         case USB_DEVICE_ID_RAZER_RAPTOR_27:
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA:
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA_V2:
-        // TODO: Double check
         case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
             device_remove_file(&hdev->dev, &dev_attr_matrix_effect_spectrum);            // Spectrum effect
             break;
@@ -2462,7 +2448,6 @@ static void razer_accessory_disconnect(struct hid_device *hdev)
         case USB_DEVICE_ID_RAZER_RAPTOR_27:
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA:
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA_V2:
-        // TODO: Double check
         case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
             device_remove_file(&hdev->dev, &dev_attr_matrix_effect_wave);                // Wave effect
             break;

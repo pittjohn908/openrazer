@@ -240,9 +240,9 @@ class RazerLeviathanV2X(_RazerDeviceBrightnessSuspend):
     USB_VID = 0x1532
     USB_PID = 0x054A
     HAS_MATRIX = True
-    MATRIX_DIMS = [1, 16]
+    MATRIX_DIMS = [2, 24]
     METHODS = ['get_device_type_accessory', 'set_static_effect', 'set_wave_effect', 'set_spectrum_effect',
                'set_none_effect', 'set_breath_random_effect', 'set_breath_single_effect', 'set_breath_dual_effect',
-               'set_custom_effect', 'set_key_row', 'set_reactive_effect', 'trigger_reactive_effect']
+               'set_custom_effect', 'set_key_row']
 
     DEVICE_IMAGE = "https://assets2.razerzone.com/images/pnx.assets/85d98a1ae29a2ed4c28b562a8b79370f/razer-leviathan-v2-x-chroma-desktop.jpg"
