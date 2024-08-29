@@ -211,7 +211,7 @@ static ssize_t razer_attr_read_device_type(struct device *dev, struct device_att
 
     case USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X:
         device_type = "Razer Leviathan V2 X\n";
-        break
+        break;
 
     default:
         device_type = "Unknown Device\n";
@@ -2571,7 +2571,7 @@ static const struct hid_device_id razer_devices[] = {
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_RAPTOR_27) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA_V2) },
-    { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X)}
+    { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_LEVIATHAN_V2_X)},
     { 0 }
 };
 
